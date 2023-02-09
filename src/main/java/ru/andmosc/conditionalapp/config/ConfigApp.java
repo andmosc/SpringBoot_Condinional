@@ -10,13 +10,13 @@ import ru.andmosc.conditionalapp.profiles.SystemProfile;
 @Configuration
 public class ConfigApp {
     @Bean
-    @ConditionalOnProperty(name="netology.profile.dev",havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(name = "netology.profile.dev", havingValue = "true", matchIfMissing = true)
     public SystemProfile devProfile() {
         return new DevProfile();
     }
 
     @Bean
-    @ConditionalOnProperty(name="netology.profile.dev",havingValue = "false")
+    @ConditionalOnProperty(name = "netology.profile.dev", havingValue = "false")
     public SystemProfile prodProfile() {
         return new ProductionProfile();
     }
